@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="typed.min.js"></script>
+    <style>
+        .typewriteColor {
+            color: red;
+        }
+        
+        .typed-cursor {
+            opacity: 1;
+            -webkit-animation: blink 0.7s infinite;
+            -moz-animation: blink 0.7s infinite;
+            animation: blink 0.7s infinite;
+        }
+        
+        @keyframes blink {
+            0% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+        
+        @-webkit-keyframes blink {
+            0% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+        
+        @-moz-keyframes blink {
+            0% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <h2 style="text-align: center"> A Collaboration app <em class="element typewriteColor" style="font-weight: 12px"></em></h2>
+
+</body>
+<script>
+    var myFunc = function() {
+        document.addEventListener("DOMContentLoaded", function() {
+            Typed.new(".element", {
+                strings: [" for teams.", " <strong>fo students.</strong>", " for developers."],
+                typeSpeed: 30, // typing speed
+                loop: !0, // here
+                backSpeed: 20,
+                startDelay: 60,
+                backDelay: 1200,
+                showCursor: true
+
+            });
+        });
+    }
+
+    myFunc();
+</script>
+
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script>
+    </script>
+</head>
+
+<body>
+    <div style="text-align: center">
+        <h2> A Collaboration app <strong id="subtitle">for teams |</strong>
+        </h2>
+
+    </div>
+
+</body>
+
+<script type="text/javascript">
+    function simulateType(id, text) {
+        var subtitle = document.getElementById(id);
+        subtitle.innerHTML = '';
+        var time = 160;
+        for (var i = 0; i < text.length; i++) {
+            (function(char) {
+                setTimeout(function() {
+                    subtitle.innerHTML = subtitle.innerHTML + char;
+                }, time + i * time);
+            })(text[i]);
+        }
+        setTimeout(function() {
+            simulateBackslash(id, text);
+        }, time * text.length + 1500);
+    }
+
+    function simulateBackslash(id) {
+        var subtitle = document.getElementById(id);
+        var text = subtitle.innerHTML
+        var time = 65;
+
+        for (var i = text.length - 1; i >= 0; i--) {
+
+            (function(index) {
+                setTimeout(function() {
+                    subtitle.innerHTML = subtitle.innerHTML.substring(0, index);
+                }, time + (text.length - i) * time);
+            })(i);
+        }
+        setTimeout(function() {
+            simulateType(id, text);
+        }, 1200);
+    }
+
+
+
+    window.onload = function() {
+
+        simulateBackslash('subtitle');
+
+    }
+</script>
+
+</html>
